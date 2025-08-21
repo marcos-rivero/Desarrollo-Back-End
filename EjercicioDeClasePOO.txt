@@ -1,0 +1,58 @@
+Crear Aplicación con linea de comando o Visual Studio Community 2022
+Intrucciones para Linea de Comando y Visual Studio Code:
+1- Instalar SDK de .NET desde https://dotnet.microsoft.com/es-es/download/visual-studio-sdks. Descargar la versión .NET 8.0 de preferencia y de acuerdo a la arquitectura de su procesador y/o sistema operativo (x64, x86, etc).
+2- Abrir Visual Studio Code o cmd de Windows, Abrir un terminal, pararse en la carpeta donde se desea crear el proyecto y correr el comando "dotnet new classlib".
+3- Crear una nueva carpeta llamada Test y dentro de esa carpeta crear un proyecto de Test Unitario con el siguiente comando "dotnet new mstest -n <NombreDelProyectoDePrueba>"
+3- Ejercicio: Crear la clase Cliente que me permita ejecutar el siguiente código en un Test Unitario:
+[TestClass]
+    public class ClienteTest
+    {
+        [TestMethod]
+        public void NombreCompleto_NombreYApellido_RetornaNombreCompleto()
+        {
+            // Arrange
+            Cliente cliente1 = new Cliente();
+            cliente1.Nombre = "Juan";
+            cliente1.Apellido = "Perez";
+            string esperado = "Juan, Perez";
+
+            // Act
+            string valorActual = cliente1.NombreCompleto(",");
+
+            // Assert
+            Assert.AreEqual(esperado, valorActual);
+        }
+
+        [TestMethod]
+        public void NombreCompleto_Nombre_RetornaNombreCompleto()
+        {
+            // Arrange
+            Cliente cliente1 = new Cliente();
+            cliente1.Nombre = "Juan";
+            //cliente1.Apellido = "Perez";
+            string esperado = "Juan";
+
+            // Act
+            string valorActual = cliente1.NombreCompleto(",");
+
+            // Assert
+            Assert.AreEqual(esperado, valorActual);
+        }
+
+        [TestMethod]
+        public void NombreCompleto_Apellido_RetornaNombreCompleto()
+        {
+            // Arrange
+            Cliente cliente1 = new Cliente();
+            //cliente1.Nombre = "Juan";
+            cliente1.Apellido = "Perez";
+            string esperado = "Perez";
+
+            // Act
+            string valorActual = cliente1.NombreCompleto(",");
+
+            // Assert
+            Assert.AreEqual(esperado, valorActual);
+        }
+
+    }

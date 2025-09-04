@@ -1,0 +1,7 @@
+Ejercicio Herencia/Polimorfismo
+URL repo
+https://github.com/marcos-rivero/HerenciaPolimorfismo.git
+
+1- Crear abstraciones, una clase (abstracta y/o concreta) y una interfaz para que CuentaBancaria y CuentaBancariaPremium hereden e implementen respectivamente.
+2- Los test unitarios deben estar todos en verde, corregir ya sea el metodo o el test en caso que haya algun error.
+3- Crear test unitarios para CuentaBancariaPremium.

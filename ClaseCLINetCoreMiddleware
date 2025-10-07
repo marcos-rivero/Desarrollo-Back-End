@@ -1,0 +1,74 @@
+Pasos para crear un proyecto de console con linea de comandos
+
+Abrir CMD en Window
+con MKDir puedo crear una carpeta
+Correr comando dotnet --help
+Correr dotnet new --help
+Correr dotnet new console
+Correr dotnet --help para mostrar el comando run
+Correr dir para ver archivos y carpetas creados
+Correr notepad Program.cs
+Correr notepad HelloWorld.csproj
+Modificar Program agregar una clase y crear un objeto, 
+//using Newtonsoft.Json;
+//Console.WriteLine(JsonConvert.SerializeObject(articulo));
+Agregar paquetes nuget buscar en https://www.nuget.org/ Newtonsoft.Json
+Instalar desde linea de comando con dotnet add package Newtonsoft.Json
+Chequear HelloWorld.csproj
+Clase program will be 
+// See https://aka.ms/new-console-template for more information
+using Newtonsoft.Json;
+Console.WriteLine("Hello, World!");
+
+var articulo = new Articulo {
+	Id = 2,
+    Descripcion = "Harina 000",
+	Cantidad = 6
+};
+
+Console.WriteLine(JsonConvert.SerializeObject(articulo));
+Console.WriteLine(JsonConvert.SerializeObject(args));
+
+public class Articulo
+{
+	public int Id { get; set; }
+	public string Descripcion { get; set; }
+	public int Cantidad { get; set; }
+};
+
+Correr comando "code ." para abrir Visual Studio Code
+Instalar extensiones de C# en Visual Studio Code: C#, 
+C# extensions, 
+Auto close Tag, 
+Auto Rename Tag, 
+Material Icon Theme, 
+Prettier - Code Formatter, 
+Bracket Pair Colorizer
+
+
+Crear un proyecto
+Proyecto web vacio
+dotnet new 
+dotnet new web --help
+dotnet new web --no-https
+dir
+
+
+Ahora remover el hello world de program toda la linea,
+crear archivo html en la raiz
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplicación de peliculas</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Aplicación de Peliculas</h1>
+    </body>
+</html>
+agregar en program app.UseStaticFiles();
+
+agregar carpeta wwwroot y mover el archivo html ahi
+
+agregar UseDefaultFiles antes de UseStaticsFiles para mostrar index sin usarlo en la url
+cambiar el orden de los middlewares
